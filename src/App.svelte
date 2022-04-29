@@ -1,6 +1,6 @@
 <script>
 	import axios from 'axios'
-	import { Router, Route, Link } from "svelte-navigator";
+	import { Router, Route, Link,navigate } from "svelte-navigator";
 	import Login from "./Login.svelte";
 	import PrivateRoute from "./PrivateRoute.svelte";
 	import { user } from "./store";
@@ -25,7 +25,15 @@
 		Swal.fire(
 			{
 				title: 'Done',
-				icon: 'success'
+				icon: 'success',
+				text: '¡Has terminado de ver el video!',
+				allowOutsideClick: false,
+				allowEnterKey: false,
+				allowEscapeKey: false
+			}
+		).then(
+			()=>{
+				navigate('/')
 			}
 		)
 	}
