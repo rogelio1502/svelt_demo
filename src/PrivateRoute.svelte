@@ -10,4 +10,3 @@
       <slot {params} {location} {navigate} />
     </PrivateRouteGuard>
   </Route>
-  

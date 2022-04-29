@@ -4,6 +4,9 @@
 	import Login from "./Login.svelte";
 	import PrivateRoute from "./PrivateRoute.svelte";
 	import { user } from "./store";
+	import YouTube from 'svelte-youtube';
+	import Swal from 'sweetalert2'
+  
   
 	function handleLogout() {
 	  $user = null;
@@ -17,10 +20,24 @@
 		)
 	}
 
+	function evento(e){
+		console.log(e);
+		Swal.fire(
+			{
+				title: 'Done',
+				icon: 'success'
+			}
+		)
+	}
+
 
 
   </script>
   
+  <YouTube
+	videoId='vK7JT3nUmFg'                 
+	on:end={evento}  
+  />
   <Router>
 	<header>
 	  <h1>History</h1>
